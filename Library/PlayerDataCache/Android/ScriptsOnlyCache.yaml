@@ -63,35 +63,35 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 11268}
+      Script: {instanceID: 11272}
     - Class: 114
-      Script: {instanceID: 11324}
+      Script: {instanceID: 11328}
     - Class: 114
-      Script: {instanceID: 11582}
+      Script: {instanceID: 11586}
     - Class: 114
-      Script: {instanceID: 11646}
+      Script: {instanceID: 11650}
     - Class: 114
-      Script: {instanceID: 11766}
+      Script: {instanceID: 11770}
     - Class: 114
-      Script: {instanceID: 12358}
+      Script: {instanceID: 12362}
     - Class: 114
-      Script: {instanceID: 12442}
+      Script: {instanceID: 12446}
     - Class: 114
-      Script: {instanceID: 12948}
+      Script: {instanceID: 12952}
     - Class: 114
-      Script: {instanceID: 12964}
+      Script: {instanceID: 12968}
     - Class: 114
-      Script: {instanceID: 13188}
+      Script: {instanceID: 13192}
     - Class: 114
-      Script: {instanceID: 13624}
+      Script: {instanceID: 13628}
     - Class: 114
-      Script: {instanceID: 13998}
+      Script: {instanceID: 14002}
     - Class: 114
-      Script: {instanceID: 14572}
+      Script: {instanceID: 14576}
     - Class: 114
-      Script: {instanceID: 14592}
+      Script: {instanceID: 14596}
     - Class: 114
-      Script: {instanceID: 14646}
+      Script: {instanceID: 14650}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -263,7 +263,7 @@ ScriptsOnlyBuild:
     className: CinemachineExternalCamera
   - hash:
       serializedVersion: 2
-      Hash: 4142313ce66ad823d474bdd9f6effa2d
+      Hash: 0a0466261a80b565e1a3b7939de345a2
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManagment
@@ -503,7 +503,7 @@ ScriptsOnlyBuild:
     className: CinemachineTrackedDolly
   - hash:
       serializedVersion: 2
-      Hash: 67cd9fd66cf689fba9792ce6ccf3c3b5
+      Hash: a1dbfbd9fa9e2f3f7b027441d48eaa36
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMove
@@ -900,4 +900,4 @@ ScriptsOnlyBuild:
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: "D:/Projects/\u041D\u043E\u0432\u0430\u044F \u043F\u0430\u043F\u043A\u0430/Valeybol/Build/v0.1/valeybol.apk"
+  playerPath: D:/Projects/old folder/Valeybol/Build/v0.2/voleyball.apk

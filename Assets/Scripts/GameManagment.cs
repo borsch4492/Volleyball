@@ -6,8 +6,11 @@ using UnityEngine.UI;
 public class GameManagment : MonoBehaviour
 {
     public GameObject ball;
+    public GameObject p1b;
+    public GameObject p2b;
     public GameObject ballSpawner;
     public Text text;
+    public bool isAndroid;
 
     private int left;
     private int right;
@@ -19,11 +22,18 @@ public class GameManagment : MonoBehaviour
     {
         ballTransform = ball.GetComponent<Transform>();
         ballRb = ball.GetComponent<Rigidbody2D>();
+        p1b.SetActive(false);
+        p2b.SetActive(false);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isAndroid)
+        {
+            p1b.SetActive(true);
+            p2b.SetActive(true);
+        }
         text.text = left + " : " + right;
     }
 
