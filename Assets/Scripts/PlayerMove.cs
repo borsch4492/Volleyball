@@ -23,7 +23,7 @@ public class PlayerMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     void FixedUpdate()
@@ -31,19 +31,15 @@ public class PlayerMove : MonoBehaviour
         //moveX = Input.GetAxis("Horizontal");
         if (Input.GetKey(left))
         {
-            moveX = -1;
+            move(-1);
         }
         else if (Input.GetKey(right))
         {
-            moveX = 1;
+            move(1);
         }
-        else
-        {
-            moveX = 0;
-        }
-
+        
         rb.MovePosition(rb.position + Vector2.right * moveX * speed * Time.fixedDeltaTime);
-        if(Input.GetKeyDown(jump))
+        if (Input.GetKeyDown(jump))
         {
             pjump();
         }
@@ -60,5 +56,10 @@ public class PlayerMove : MonoBehaviour
     public void pjump()
     {
         rb.AddForce(Vector2.up * thrust);
+    }
+
+    public void move(int side) // true - left, false - right
+    {
+        moveX = side;
     }
 }
