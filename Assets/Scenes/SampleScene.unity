@@ -133,10 +133,9 @@ GameObject:
   - component: {fileID: 1271579}
   - component: {fileID: 1271582}
   - component: {fileID: 1271581}
-  - component: {fileID: 1271583}
   m_Layer: 0
   m_Name: ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -243,19 +242,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1271583
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe571d509ee9c0b4ab6a316f5e7126ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameManagment: {fileID: 892102156}
 --- !u!1 &189214072
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,6 +378,7 @@ GameObject:
   - component: {fileID: 329101471}
   - component: {fileID: 329101473}
   - component: {fileID: 329101472}
+  - component: {fileID: 329101474}
   m_Layer: 0
   m_Name: ball (1)
   m_TagString: Ball
@@ -479,6 +466,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &329101474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 329101470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe571d509ee9c0b4ab6a316f5e7126ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManagment: {fileID: 892102156}
 --- !u!1 &384572641
 GameObject:
   m_ObjectHideFlags: 0
@@ -595,7 +595,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &467987057
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1416,6 +1416,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e35bfd72c2d6d247989b63bd6139693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoJump: 1
   speed: 10
   thrust: 4649
   left: 97
@@ -1453,6 +1454,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e35bfd72c2d6d247989b63bd6139693, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  autoJump: 1
   speed: 10
   thrust: 4649
   left: 276

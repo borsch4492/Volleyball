@@ -36,9 +36,9 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\GameManagment.cs" />
+     <Compile Include="Assets\Scripts\GameManagment.cs" />
      <Compile Include="Assets\Scripts\PlayerMove.cs" />
-     <Compile Include="Assets\trigger.cs" />
+     <Compile Include="Assets\Scripts\trigger.cs" />
     <Reference Include="UnityEngine">
         <HintPath>D:/Program Files/Unities/2019.4.15f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

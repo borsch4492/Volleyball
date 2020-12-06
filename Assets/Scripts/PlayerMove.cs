@@ -6,8 +6,8 @@ public class PlayerMove : MonoBehaviour
 {
     private float moveX;
     private Rigidbody2D rb;
-    private const bool autoJump = false;
 
+    public bool autoJump = true;
     public float speed;
     public float thrust;
     public KeyCode left;
