@@ -29,6 +29,7 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
         //moveX = Input.GetAxis("Horizontal");
+        #if UNITY_STANDALONE_WIN || UNITY_EDITOR
         if (Input.GetKey(left))
         {
             move(-1);
@@ -37,12 +38,16 @@ public class PlayerMove : MonoBehaviour
         {
             move(1);
         }
-        
-        rb.MovePosition(rb.position + Vector2.right * moveX * speed * Time.fixedDeltaTime);
+        else
+        {
+            move(0);
+        }
         if (Input.GetKeyDown(jump))
         {
             pjump();
         }
+        #endif
+        rb.MovePosition(rb.position + Vector2.right * moveX * speed * Time.fixedDeltaTime);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -58,7 +63,7 @@ public class PlayerMove : MonoBehaviour
         rb.AddForce(Vector2.up * thrust);
     }
 
-    public void move(int side) // true - left, false - right
+    public void move(int side)
     {
         moveX = side;
     }

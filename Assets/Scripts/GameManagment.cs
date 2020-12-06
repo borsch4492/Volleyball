@@ -42,6 +42,6 @@ public class GameManagment : MonoBehaviour
     private void ballRespawn()
     {
         ballRb.velocity = Vector2.zero;
-        ballTransform.position = ballSpawner.transform.position + new Vector3(Random.Range(-3, 3), 0, 0);
+        ballTransform.position = ballSpawner.transform.position + new Vector3(Random.Range(-3.0f, 3.0f), 0, 0);
     }
 }
