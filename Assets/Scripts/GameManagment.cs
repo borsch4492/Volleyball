@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 public class GameManagment : MonoBehaviour
 {
@@ -10,10 +9,14 @@ public class GameManagment : MonoBehaviour
     public GameObject p2b;
     public GameObject ballSpawner;
     public Text text;
-    public bool isAndroid;
+    public Text touches;
+    public bool isAndroid = false;
+    public int t;
+    public Animator animation;
 
     private int left;
     private int right;
+    private int t2;
     private Transform ballTransform;
     private Rigidbody2D ballRb;
 
@@ -24,6 +27,7 @@ public class GameManagment : MonoBehaviour
         ballRb = ball.GetComponent<Rigidbody2D>();
         p1b.SetActive(false);
         p2b.SetActive(false);
+        ballRespawn();
     }
 
     // Update is called once per frame
@@ -35,6 +39,14 @@ public class GameManagment : MonoBehaviour
             p2b.SetActive(true);
         }
         text.text = left + " : " + right;
+        touches.text = "X " + t;
+        if (t != t2)
+        {
+            animation.SetBool("isPlay", true);
+            StartCoroutine(anim());
+        }
+
+        t2 = t;
     }
 
     public void BallFallLeft()
@@ -49,9 +61,15 @@ public class GameManagment : MonoBehaviour
         ballRespawn();
     }
 
-    private void ballRespawn()
+    public void ballRespawn()
     {
         ballRb.velocity = Vector2.zero;
-        ballTransform.position = ballSpawner.transform.position + new Vector3(Random.Range(-3.0f, 3.0f), 0, 0);
+        ballTransform.position = ballSpawner.transform.position + new Vector3(Random.Range(-1.5f, 1.5f), 0, 0);
+    }
+
+    IEnumerator anim()
+    {
+        yield return new WaitForSeconds(0.30f);
+        animation.SetBool("isPlay", false);
     }
 }

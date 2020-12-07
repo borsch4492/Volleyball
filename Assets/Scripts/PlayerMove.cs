@@ -1,12 +1,10 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
     private float moveX;
     private Rigidbody2D rb;
-    private const bool isAndroid = true;
+    private bool isAndroid = true;
 
     public bool autoJump = true;
     public float speed;
@@ -15,6 +13,7 @@ public class PlayerMove : MonoBehaviour
     public KeyCode right;
     public KeyCode jump;
     public GameManagment gm;
+    public Joystick playerJoystick;
 
     // Start is called before the first frame update
     void Start()
@@ -32,24 +31,28 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
         //moveX = Input.GetAxis("Horizontal");
-        if (!isAndroid)
+        if (!isAndroid || playerJoystick.Horizontal == 0f)
         {
             if (Input.GetKey(left))
             {
-                move(-1);
+                move(-1f);
             }
             else if (Input.GetKey(right))
             {
-                move(1);
+                move(1f);
             }
             else
             {
-                move(0);
+                move(0f);
             }
             if (Input.GetKeyDown(jump))
             {
                 pjump();
             }
+        }
+        else
+        {
+            move(playerJoystick.Horizontal);
         }
         rb.MovePosition(rb.position + Vector2.right * moveX * speed * Time.fixedDeltaTime);
     }
@@ -67,7 +70,7 @@ public class PlayerMove : MonoBehaviour
         rb.AddForce(Vector2.up * thrust);
     }
 
-    public void move(int side)
+    public void move(float side)
     {
         moveX = side;
     }

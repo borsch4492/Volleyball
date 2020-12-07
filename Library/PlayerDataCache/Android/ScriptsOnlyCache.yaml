@@ -3,6 +3,8 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - GameManagment
     - PlayerMove
+    - StopScript
+    - VariableJoystick
     - trigger
     Cinemachine.dll:
     - Cinemachine.CinemachineBrain
@@ -20,6 +22,14 @@ ScriptsOnlyBuild:
     - UnityEditor.Tilemaps.TileDragAndDropManager
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -28,6 +38,7 @@ ScriptsOnlyBuild:
     - UnityEngine.EventSystems.EventSystem
     - UnityEngine.EventSystems.EventTrigger
     - UnityEngine.EventSystems.StandaloneInputModule
+    - UnityEngine.UI.Button
     - UnityEngine.UI.CanvasScaler
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
@@ -56,7 +67,13 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 70
       Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 96
       Script: {instanceID: 0}
@@ -81,6 +98,8 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 12968}
     - Class: 114
+      Script: {instanceID: 13142}
+    - Class: 114
       Script: {instanceID: 13192}
     - Class: 114
       Script: {instanceID: 13628}
@@ -92,6 +111,12 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14596}
     - Class: 114
       Script: {instanceID: 14650}
+    - Class: 114
+      Script: {instanceID: 15608}
+    - Class: 114
+      Script: {instanceID: 18710}
+    - Class: 114
+      Script: {instanceID: 42452}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -131,7 +156,7 @@ ScriptsOnlyBuild:
     className: TMP_SelectionCaret
   - hash:
       serializedVersion: 2
-      Hash: b3dda2109f17183ba317d377bc75ed1b
+      Hash: 16c150f69279c75e2fac81ca002a6d08
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: trigger
@@ -263,7 +288,7 @@ ScriptsOnlyBuild:
     className: CinemachineExternalCamera
   - hash:
       serializedVersion: 2
-      Hash: 0a0466261a80b565e1a3b7939de345a2
+      Hash: e83f6459873e31770fa77fb5b89190fb
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameManagment
@@ -503,7 +528,7 @@ ScriptsOnlyBuild:
     className: CinemachineTrackedDolly
   - hash:
       serializedVersion: 2
-      Hash: a1dbfbd9fa9e2f3f7b027441d48eaa36
+      Hash: e0f62387e31783c742a44e8f90988562
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerMove
@@ -897,7 +922,43 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Joystick
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FloatingJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: 824e8d4cb47ffd88ddf959dbd4526585
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DynamicJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: ce669872a2be11bc686ea22961d8a3bb
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: FixedJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: 9dac16f3efc511835ac976dfae55f580
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: VariableJoystick
+  - hash:
+      serializedVersion: 2
+      Hash: 88d776fa14305cd3964979838f22ab71
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: StopScript
   platform: 13
   scenePathNames:
   - Assets/Scenes/SampleScene.unity
-  playerPath: D:/Projects/old folder/Valeybol/Build/v0.2/voleyball.apk
+  playerPath: D:/Projects/old folder/Valeybol/Build/v0.3/voleyball.apk
