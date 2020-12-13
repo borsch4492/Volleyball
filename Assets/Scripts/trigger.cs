@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class trigger : MonoBehaviour
 {
@@ -56,5 +57,17 @@ public class trigger : MonoBehaviour
             lTouches = 0;
         }
     }
-
+    IEnumerator deStuck()
+    {
+        while (true)
+        {
+            Vector2 pos = transform.position;
+            Vector2 pos2 = pos;
+            yield return new WaitForSeconds(1);
+            if (pos == pos2)
+            {
+                gameManagment.ballRespawn();
+            }
+        }
+    }
 }

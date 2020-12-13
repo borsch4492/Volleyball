@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System.Collections;
 
 public class PlayerMove : MonoBehaviour
 {
@@ -14,12 +15,19 @@ public class PlayerMove : MonoBehaviour
     public KeyCode jump;
     public GameManagment gm;
     public Joystick playerJoystick;
+    public bool isBot;
+    public GameObject ball;
+    public float difC;
+    public float minDifC;
+    public float maxDifC;
+
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         gm.isAndroid = isAndroid;
+        StartCoroutine(randDifC(minDifC, maxDifC));
     }
 
     // Update is called once per frame
@@ -31,28 +39,44 @@ public class PlayerMove : MonoBehaviour
     void FixedUpdate()
     {
         //moveX = Input.GetAxis("Horizontal");
-        if (!isAndroid || playerJoystick.Horizontal == 0f)
+        if (!isBot)
         {
-            if (Input.GetKey(left))
+            if (!isAndroid || playerJoystick.Horizontal == 0f)
             {
-                move(-1f);
+                if (Input.GetKey(left))
+                {
+                    move(-1f);
+                }
+                else if (Input.GetKey(right))
+                {
+                    move(1f);
+                }
+                else
+                {
+                    move(0f);
+                }
+                if (Input.GetKeyDown(jump))
+                {
+                    pjump();
+                }
             }
-            else if (Input.GetKey(right))
+            else
+            {
+                move(playerJoystick.Horizontal);
+            }
+        }
+        else
+        {
+            float dif = transform.position.x - ball.transform.position.x;
+            dif = dif + difC;
+            if (dif < 0)
             {
                 move(1f);
             }
             else
             {
-                move(0f);
+                move(-1f);
             }
-            if (Input.GetKeyDown(jump))
-            {
-                pjump();
-            }
-        }
-        else
-        {
-            move(playerJoystick.Horizontal);
         }
         rb.MovePosition(rb.position + Vector2.right * moveX * speed * Time.fixedDeltaTime);
     }
@@ -73,5 +97,15 @@ public class PlayerMove : MonoBehaviour
     public void move(float side)
     {
         moveX = side;
+    }
+
+    IEnumerator randDifC(float min, float max)
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(2.5f, 5f));
+            difC = Random.Range(min, max);
+            // difC = 0 - difC;
+        }
     }
 }

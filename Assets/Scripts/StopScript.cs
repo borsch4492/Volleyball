@@ -34,10 +34,12 @@ public class StopScript : MonoBehaviour
 
     public void loadScene(string name)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(name);
     }
     public void loadScene(int number)
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene(number);
     }
 

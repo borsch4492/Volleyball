@@ -25,19 +25,19 @@ public class GameManagment : MonoBehaviour
     {
         ballTransform = ball.GetComponent<Transform>();
         ballRb = ball.GetComponent<Rigidbody2D>();
-        p1b.SetActive(false);
-        p2b.SetActive(false);
+        // p1b.SetActive(false);
+        // p2b.SetActive(false);
         ballRespawn();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isAndroid)
-        {
-            p1b.SetActive(true);
-            p2b.SetActive(true);
-        }
+        // if (isAndroid)
+        // {
+        //     p1b.SetActive(true);
+        //     p2b.SetActive(true);
+        // }
         text.text = left + " : " + right;
         touches.text = "X " + t;
         if (t != t2)
