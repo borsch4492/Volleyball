@@ -9,6 +9,11 @@ TagManager:
   - Ball
   - Player1
   - Player2
+  - BigPlayer
+  - SupBall
+  - RelBall
+  - BlockBall
+  - DeSpeedTime
   layers:
   - Default
   - TransparentFX

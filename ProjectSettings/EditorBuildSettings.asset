@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 03050a76af9c76246b2cfb2ddd8a34b0
+  - enabled: 1
+    path: Assets/Scenes/mpChoose.unity
+    guid: cf89a86a15c47e642a6eef565d59ad36
+  - enabled: 1
+    path: Assets/Scenes/powerups.unity
+    guid: c924cd97f255ac242a4a089d07f6a146
   m_configObjects: {}
